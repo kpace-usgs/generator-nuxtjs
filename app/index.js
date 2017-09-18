@@ -98,11 +98,12 @@ module.exports = class extends yeoman {
             message: 'Include Google Analytics?',
             choices: [
               'Yes', 'No'
-            ]
+            ],
+            default: 'No'
           },{
             type: 'list',
             name: 'axios',
-            message: 'Include Axios.js?'
+            message: 'Include Axios.js?',
             choices: [
             'Yes', 'No'],
             default: 'No'

@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Kylie M Pace",
+      "authorEmail": "kpace@usgs.gov",
+      "authorUrl": "ca.water.usgs.gov"
+    }
+  }
+}
