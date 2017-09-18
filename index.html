@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Nuxt.js Project @ CAWSC</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,138 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>nuxt.js project</h1>
+					<h2>California Water Science Center</h2>
+					<h3>Kylie Pace, Web Developer</h3>
+					<h5><a href='github.com/kpace-usgs'>
+						github.com/kpace-usgs</a>
+					</h5>
+					<h5>kpace@usgs.gov</h5>
+				</section>
+				<section>
+					<h1>The Project</h1>
+					<div >
+						<ul style='max-width: 600px;'>
+							<li>Static pages</li>
+							<li>Header, footer unchanged</li>
+							<li>Shared library of scientific references and spatial data</li>
+							<li>Leaflet, Plotly, and Chart.js plugins</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h1>Why Nuxt.js</h1>
+					<div >
+						<ul style='max-width: 600px;'>
+							<li>SSR for <a href='https://vuejs.org'>Vue.js</a></li>
+							<li>Prerendering by router</li>
+							<li>Webpack</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>nuxt.config.js</h3>
+					<div>
+						<img src='./lib/images/nuxt.config.js' style='max-width: 650px;'/>
+					</div>
+				</section>
+
+				<section>
+					<h3>package.json</h3>
+					<div>
+						<img src='./lib/images/package.json' style='max-width: 650px'/>
+					</div>
+				</section>
+
+				<section>
+					<h3>pages</h3>
+					<div style='display: flex; align-items: center; justify-content: space-between; max-width: 600px; margin: auto;'>
+						<img src='./lib/images/pages.png'/>
+						<p style='text-align: left; max-width: 400px;'>
+							Static pages arranged to match the pages folder file structure.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>pages</h3>
+					<div style='display: flex; align-items: center; justify-content: space-between;  margin: auto;'>
+						<img src='./lib/images/template.png'/>
+						<p style='text-align: left; margin-left: 20px;'>
+							Written with vue.js: HTML up top, JS in the middle, css separate but on the same page.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>Layouts</h3>
+					<div style='display: flex; align-items: center; justify-content: space-between; max-width: 600px; margin: auto;'>
+						<img src='./lib/images/layouts.png'/>
+						<p style='text-align: left; max-width: 400px;'>
+							Unless otherwise specified, pages are inserted into the default layout.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>Layouts</h3>
+					<div style='display: flex; align-items: center; justify-content: space-between; margin: auto;'>
+						<img src='./lib/images/layout.png'/>
+						<div style='text-align: left; margin-left: 20px;'>
+							<p>Each page is the 
+							<pre><code><nuxt/></code></pre> component.</p>
+							<p>Re-usable components are imported.</p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Components</h3>
+					<div style='display: flex; align-items: center; justify-content: space-between; margin: auto; max-width: 600px;'>
+						<img src='./lib/images/components.png' style='max-width: 250px;'/>
+						<p style='text-align: left; max-width: 400px; margin-left: 20px;'>
+							Re-usable components only have to be included once.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>generate static pages</h3>
+					<div style='display: flex; align-items: center; justify-content: center; margin: auto;'>
+						<img src='./lib/images/npmrungenerate.png' 
+							/>
+						
+					</div>
+				</section>
+
+				<section>
+					<h3>static output</h3>
+					<div style='display: flex; align-items: center; justify-content: center; margin: auto;'>
+						<img src='./lib/images/dist.png' 
+							/>
+						
+					</div>
+				</section>
+
+				<section>
+					<h3>code splitting</h3>
+					<div style='display: flex; align-items: center; justify-content: center; margin: auto;'>
+						<img src='./lib/images/bundleAnalyzer.png' 
+							/>
+					</div>
+				</section>
+
+				<section>
+					<h3>to-do</h3>
+					<div style='display: flex; align-items: center; justify-content: center; margin: auto;'>
+						<p>
+							<a href='https://github.com/kpace-usgs/generator-nuxtjs'>working on a generator</a>
+						</p>
+					</div>
+				</section>
 			</div>
 		</div>
 
@@ -42,7 +172,11 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+				mouseWheel: true,
+				history: true,
+				transitionSpeed: 'fast',
+				transition: 'convex'
 			});
 		</script>
 	</body>
