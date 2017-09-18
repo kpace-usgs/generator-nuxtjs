@@ -7,12 +7,24 @@ First, install [Yeoman](http://yeoman.io) and generator-nuxtjs using [npm](https
 
 ```bash
 npm install -g yo
-npm install -g generator-nuxtjs
 ```
 
-Then generate your new project:
+Then clone 'generator-nuxtjs' repo
+```
+git clone https://github.com/kpace-usgs/generator-nuxtjs.git
+```
 
+Create a link to the nuxtjs generator
 ```bash
+cd generator-nuxtjs
+npm install
+npm link
+```
+
+Finally, create a folder for your app and run the generator 
+```
+mkdir nuxt-app
+cd nuxt-app
 yo nuxtjs
 ```
 
