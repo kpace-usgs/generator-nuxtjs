@@ -8,7 +8,7 @@
     "email": "kpace@usgs.gov",
     "url": "ca.water.usgs.gov"
   },
-  "main": "generators/index.js",
+  "main": "app/index.js",
   "files": [
     "generators"
   ],
@@ -20,7 +20,9 @@
     "static",
     "yeoman-generator"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^21.1.0"
+  },
   "dependencies": {
     "yeoman-generator": "^1.0.0",
     "chalk": "^1.1.3",
