@@ -22,10 +22,10 @@
   ],
   "devDependencies": {
     "coveralls": "^2.13.1",
-    "jest": "^19.0.2",
-    "jest-cli": "^20.0.4",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.6.0"
+    "yeoman-test": "^1.6.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.4"
   },
   "dependencies": {
     "yeoman-generator": "^1.0.0",
@@ -33,7 +33,7 @@
     "yosay": "^2.0.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "bugs": {
     "url": "https://github.com/kpace-usgs/generator-nuxtjs/issues"
