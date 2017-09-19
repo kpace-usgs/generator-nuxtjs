@@ -33,7 +33,7 @@
     "yosay": "^2.0.0"
   },
   "scripts": {
-    "test": "jest && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/kpace-usgs/generator-nuxtjs/issues"
