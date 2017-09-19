@@ -1,9 +1,34 @@
 <template>
   <div>
+    <USGSHeader :width='width'/>
     <nuxt/>
+    <USGSFooter/>
   </div>
 </template>
 
+<script>
+import USGSHeader from '~/components/Header.vue'
+import USGSFooter from '~/components/Footer.vue'
+
+export default {
+  // register components
+  components: {
+    USGSHeader, USGSFooter
+  },
+
+  // declare state variables
+  data(){
+    return {
+      width: ''
+    }
+  },
+
+  // once mounted to page, set this.width equal to the screen window's innerWidth. This will update the value passed to the USGSHeader component.
+  mounted(){
+    this.width = window.innerWidth;
+  }
+}
+</script>
 <style>
 html
 {

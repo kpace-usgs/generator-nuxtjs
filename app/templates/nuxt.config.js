@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'usgs-nuxt',
+    title: '<%= appName %>',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,24 +26,25 @@ module.exports = {
     extractCSS: true
   },
   generate: {
-    routes: [
-      '/',
-      '/news',
-      '/about'
-    ],
     minify: {
       removeComments: true
     }
   },
   router: {
     // change according to where on live server the dist folder will live
-    base: '/nuxt/dist/'
+    base: '<%= basename %>'
   },
   plugins: [
-    //{ src: '~/plugins/vue-chartjs.js'}
+    <%if(dataViz == 'leaflet'){%>{ src: '~/plugins/vue2-leaflet.js', ssr: false}<%}%>
+    <%if(dataViz == 'chart.js'){%>{ src: '~/plugins/vue-chartjs.js'}<%}%>
+    <%if(dataViz == 'highcharts'){%>{ src: '~/plugins/vue-highcharts.js', ssr: false }<%}%>
+
   ],
   modules: [
-    '@nuxtjs/font-awesome',
-    ['@nuxtjs/bootstrap-vue', {css: false}]
+    <%if(bootstrap == 'Yes'){%>['@nuxtjs/bootstrap-vue', {css: false}]<%}%>,
+    <%if(sitemap == 'Yes'){%>'@nuxtjs/sitemap'<%}%>,
+    <%if(axios == 'Yes'){%>'@nuxtjs/axios', axios: {}<%}%>,
+    <%if(googleAnalytics == 'Yes'){%>['@nuxtjs/google-analytics', {ua: '<%= UA %>'}]<%}%>,
+    '@nuxtjs/font-awesome'
   ]
 }

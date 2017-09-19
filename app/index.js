@@ -12,12 +12,12 @@ module.exports = class extends yeoman {
 
     this.argument('appName', {type: String, required: false });
     this.argument('bootstrap', {type: String, required: false});
-    this.argument('charting', {type: String, required: false});
-    this.argument('chartingLib', {type: String, required: false})
-    this.argument('mapping', {type: String, required: false});
+    this.argument('dataViz', {type: String, required: false});
     this.argument('googleAnalytics', {type: String, required: false});
+    this.argument('UA', {type: String, required: false});
     this.argument('axios', {type: String, required: false});
-    this.argument('sitemap', {type: String, required: false})
+    this.argument('sitemap', {type: String, required: false});
+    this.argument('basename', {type: String, required: false})
   }
 
   initializing(){
@@ -64,35 +64,18 @@ module.exports = class extends yeoman {
             ],
             default: 'No'
           },
+        
           {
             type: 'list',
-            name: 'charting',
-            message: 'Will this site include chart or graph data visualizations?',
+            name: 'dataViz',
+            message: 'What data viz library do you want to use?',
             choices: [
-              'Yes', 'No'
+              'chart.js', 'highcharts', 'leaflet', 'none'
             ],
-            default: 'No'
+            default: 'none',
+          
           },
           {
-            type: 'list',
-            name: 'chartingLib',
-            message: 'What charting library do you want to use?',
-            choices: [
-              'chart.js', 'highcharts'
-            ],
-            //only ask this question if the mappingAPI is leaflet right now
-            when: function(answers) {
-              return answers.charting === 'Yes';
-            }
-          },{
-            type: 'list',
-            name: 'mapping',
-            message: 'Will this site include leaflet.js maps?',
-            choices: [
-              'Yes', 'No'
-            ],
-            default: 'No'
-          },{
             type: 'list',
             name: 'googleAnalytics',
             message: 'Include Google Analytics?',
@@ -100,6 +83,13 @@ module.exports = class extends yeoman {
               'Yes', 'No'
             ],
             default: 'No'
+          },{
+            type: 'input',
+            name: 'UA',
+            message: 'What is your Google Analytics ID?',
+            when: function(answers) {
+              return answers.googleAnalytics == 'Yes'
+            }
           },{
             type: 'list',
             name: 'axios',
@@ -113,15 +103,20 @@ module.exports = class extends yeoman {
             message: 'build a sitemap?',
             choices: ['Yes', 'No'],
             default: 'No'
+          }, {
+            type: 'input',
+            name: 'basename',
+            message: 'what is the path that the dist folder will live on your server? note: manually change this entry in the nuxt.config.js file before building for production',
+            default: '/'
           }]).then((answers) => {
             this.appName = answers.appName;
             this.bootstrap = answers.bootstrap;
             this.sitemap = answers.sitemap;
             this.googleAnalytics = answers.googleAnalytics;
-            this.mapping = answers.mapping;
-            this.chartingLib = answers.chartingLib;
-            this.charting = answers.charting;
+            this.UA = answers.UA;
+            this.dataViz = answers.dataViz;
             this.axios = answers.axios;
+            this.basename = answers.basename;
           });
         }
         else {
@@ -129,10 +124,10 @@ module.exports = class extends yeoman {
           this.bootstrap = this.options.bootstrap;
           this.sitemap = this.options.sitemap;
           this.googleAnalytics = this.options.googleAnalytics;
-          this.mapping = this.options.mapping;
-          this.chartingLib = this.options.chartingLib;
-          this.charting = this.options.charting;
+          this.UA = this.options.UA;
+          this.dataViz = this.options.dataViz;
           this.axios = this.options.axios;
+          this.basename = this.options.basename;
         }
     }
 
@@ -147,10 +142,10 @@ module.exports = class extends yeoman {
       bootstrap: this.bootstrap,
       sitemap: this.sitemap,
       googleAnalytics: this.googleAnalytics,
+      UA: this.UA,
       axios: this.axios,
-      mapping: this.mapping,
-      chartingLib: this.chartingLib,
-      charting: this.charting
+      dataViz: this.dataViz,
+      basename: this.basename
     };
 
       //Copy the configuration files
