@@ -38,5 +38,5 @@ yo nuxtjs
 [travis-url]: https://travis-ci.org/kpace-usgs/generator-nuxtjs
 [daviddm-image]: https://david-dm.org/kpace-usgs/generator-nuxtjs.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/kpace-usgs/generator-nuxtjs
-[coveralls-image]: https://coveralls.io/repos/kpace-usgs/generator-nuxtjs/badge.svg
-[coveralls-url]: https://coveralls.io/r/kpace-usgs/generator-nuxtjs
+[coveralls-image]: https://coveralls.io/repos/github/kpace-usgs/generator-nuxtjs/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/kpace-usgs/generator-nuxtjs?branch=master
