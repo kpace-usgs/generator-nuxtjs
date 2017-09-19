@@ -1,4 +1,4 @@
-# generator-nuxtjs [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-nuxtjs  [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > generate a nuxtjs project that prerenders a multi-page site built using vue.js framework
 
 ## Installation
@@ -34,8 +34,6 @@ yo nuxtjs
 
 
 
-[npm-image]: https://badge.fury.io/js/generator-nuxtjs.svg
-[npm-url]: https://npmjs.org/package/generator-nuxtjs
 [travis-image]: https://travis-ci.org/kpace-usgs/generator-nuxtjs.svg?branch=master
 [travis-url]: https://travis-ci.org/kpace-usgs/generator-nuxtjs
 [daviddm-image]: https://david-dm.org/kpace-usgs/generator-nuxtjs.svg?theme=shields.io
