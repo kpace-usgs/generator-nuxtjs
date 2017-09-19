@@ -38,7 +38,7 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "pretest": "eslint . --fix",
+    "pretest": "eslint --fix",
     "test": "jest"
   },
   "eslintConfig": {
