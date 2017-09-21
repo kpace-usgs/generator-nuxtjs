@@ -28,6 +28,9 @@ mkdir nuxt-app
 cd nuxt-app
 yo nuxtjs
 ```
+## Learn more about Vue
+[Vue.js docs](https://vuejs.org)
+[Intro for people who know jQuery](https://medium.freecodecamp.org/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77)
 
 ## Learn more about Nuxt
 [Hello World](https://nuxtjs.org/examples)
