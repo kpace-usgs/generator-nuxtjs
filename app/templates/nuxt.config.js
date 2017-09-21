@@ -17,14 +17,19 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#003366' },
-  /*
-  ** Build configuration
-  */
-  build: {
-    analyze: true,
-    publicPath: '/_nuxt/',
-    extractCSS: true
-  },
+  
+  <%if(cms == 'Yes'){%>
+  /* set env variables for connecting to CMS */
+  // this assumes you're using Cockpit, but you can replace this with whatever headless CMS you choose
+  env: {
+    cockpit: {
+      apiUrl: 'https://' + '<%= cmsUrl %>' + '/index.php/rest/api',
+      apiToken: '<%= cmsToken %>',
+      baseUrl: 'https://' + '<%= cmsUrl %>'
+    }
+  }
+  <%}%>
+
   generate: {
     minify: {
       removeComments: true
@@ -46,5 +51,13 @@ module.exports = {
     <%if(axios == 'Yes'){%>'@nuxtjs/axios', axios: {}<%}%>,
     <%if(googleAnalytics == 'Yes'){%>['@nuxtjs/google-analytics', {ua: '<%= UA %>'}]<%}%>,
     '@nuxtjs/font-awesome'
-  ]
+  ],
+  /*
+  ** Build configuration
+  */
+  build: {
+    analyze: true,
+    publicPath: '/_nuxt/',
+    extractCSS: true
+  }
 }

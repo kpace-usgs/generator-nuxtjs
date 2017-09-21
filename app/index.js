@@ -17,7 +17,10 @@ module.exports = class extends yeoman {
     this.argument('UA', {type: String, required: false});
     this.argument('axios', {type: String, required: false});
     this.argument('sitemap', {type: String, required: false});
-    this.argument('basename', {type: String, required: false})
+    this.argument('basename', {type: String, required: false});
+    this.argument('cms', {type: String, required: false});
+    this.argument('cmsUrl', {type: String, required: false});
+    this.argument('cmsToken', {type: String, required: false});
   }
 
   initializing(){
@@ -93,11 +96,40 @@ module.exports = class extends yeoman {
           },{
             type: 'list',
             name: 'axios',
-            message: 'Include Axios.js?',
+            message: 'Include Axios.js? (Must select if requesting content from CMS)',
             choices: [
             'Yes', 'No'],
             default: 'No'
-          },{
+          },
+          {
+            type: 'list',
+            name: 'cms',
+            message: 'Will this be connected to a CMS?',
+            default: 'No',
+            choices: [
+            'Yes', 'No'],
+            when: function(answers) {
+              return answers.axios == 'Yes'
+            }
+          },
+          {
+            type: 'input',
+            name: 'cmsUrl',
+            message: 'What is the url of where your CMS is installed?',
+            when: function(answers) {
+              return answers.cms == 'Yes'
+            }
+          },
+          {
+            type: 'input',
+            name: 'cmsToken',
+            message: 'What is your token for your CMS? (Note: generator assumes you\'re using Cockpit CMS. If not, leave blank and configure your API connection in nuxt.config.js file.',
+            when: function(answers) {
+              return answers.cms == 'Yes'
+            }
+          },
+
+          {
             type: 'list',
             name: 'sitemap',
             message: 'build a sitemap?',
@@ -117,6 +149,9 @@ module.exports = class extends yeoman {
             this.dataViz = answers.dataViz;
             this.axios = answers.axios;
             this.basename = answers.basename;
+            this.cms = answers.csm;
+            this.cmsToken = answer.cmsToken;
+            this.cmsUrl = answer.cmsUrl;
           });
         }
         else {
@@ -128,6 +163,9 @@ module.exports = class extends yeoman {
           this.dataViz = this.options.dataViz;
           this.axios = this.options.axios;
           this.basename = this.options.basename;
+          this.cms = this.options.cms;
+          this.cmsToken = this.options.cmsToken;
+          this.cmsUrl = this.options.cmsUrl;
         }
     }
 
@@ -145,18 +183,19 @@ module.exports = class extends yeoman {
       UA: this.UA,
       axios: this.axios,
       dataViz: this.dataViz,
-      basename: this.basename
+      basename: this.basename,
+      cms: this.cms,
+      cmsToken: this.cmsToken,
+      cmsUrl: this.cmsUrl
     };
 
       //Copy the configuration files
-    this.fs.copy(this.templatePath(), this.destinationPath(), { globOptions: { dot: true, ignore: ['**/package.json','**/nuxt.config.js']}});
+    this.fs.copy(this.templatePath(), this.destinationPath(), { globOptions: { dot: true, ignore: ['**/package.json','**/nuxt.config.js','**/pages/index.vue']}});
 
     //then overwrite template files
-    //this.fs.copyTpl(this.templatePath('src/index.html'), this.destinationPath('src/index.html'), this.appConfig);
+    this.fs.copyTpl(this.templatePath('pages/index.vue'), this.destinationPath('pages/index.vue'), this.appConfig);
 
-    this.fs.copyTpl(
-        this.templatePath('package.json'), this.destinationPath('package.json'), this.appConfig
-    );
+    this.fs.copyTpl(this.templatePath('package.json'), this.destinationPath('package.json'), this.appConfig);
 
     this.fs.copyTpl(this.templatePath('nuxt.config.js'), this.destinationPath('nuxt.config.js'), this.appConfig);
   }
