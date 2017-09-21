@@ -116,6 +116,7 @@ module.exports = class extends yeoman {
             type: 'input',
             name: 'cmsUrl',
             message: 'What is the url of where your CMS is installed?',
+            default: '',
             when: function(answers) {
               return answers.cms == 'Yes'
             }
@@ -124,6 +125,7 @@ module.exports = class extends yeoman {
             type: 'input',
             name: 'cmsToken',
             message: 'What is your token for your CMS? (Note: generator assumes you\'re using Cockpit CMS. If not, leave blank and configure your API connection in nuxt.config.js file.',
+            default: '',
             when: function(answers) {
               return answers.cms == 'Yes'
             }
@@ -150,8 +152,8 @@ module.exports = class extends yeoman {
             this.axios = answers.axios;
             this.basename = answers.basename;
             this.cms = answers.csm;
-            this.cmsToken = answer.cmsToken;
-            this.cmsUrl = answer.cmsUrl;
+            this.cmsToken = answers.cmsToken;
+            this.cmsUrl = answers.cmsUrl;
           });
         }
         else {
