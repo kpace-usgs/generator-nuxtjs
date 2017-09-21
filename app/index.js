@@ -21,6 +21,7 @@ module.exports = class extends yeoman {
     this.argument('cms', {type: String, required: false});
     this.argument('cmsUrl', {type: String, required: false});
     this.argument('cmsToken', {type: String, required: false});
+    this.argument('testing', {type: String, required: false});
   }
 
   initializing(){
@@ -130,7 +131,13 @@ module.exports = class extends yeoman {
               return answers.cms == 'Yes'
             }
           },
-
+          {
+            type: 'list',
+            name: 'testing',
+            message: 'Include unit testing with Jest?',
+            default: '',
+            choices: ['Yes', 'No']
+          },
           {
             type: 'list',
             name: 'sitemap',
@@ -154,6 +161,7 @@ module.exports = class extends yeoman {
             this.cms = answers.csm;
             this.cmsToken = answers.cmsToken;
             this.cmsUrl = answers.cmsUrl;
+            this.testing = answers.testing;
           });
         }
         else {
@@ -168,6 +176,7 @@ module.exports = class extends yeoman {
           this.cms = this.options.cms;
           this.cmsToken = this.options.cmsToken;
           this.cmsUrl = this.options.cmsUrl;
+          this.testing = this.options.testing;
         }
     }
 
@@ -188,7 +197,8 @@ module.exports = class extends yeoman {
       basename: this.basename,
       cms: this.cms,
       cmsToken: this.cmsToken,
-      cmsUrl: this.cmsUrl
+      cmsUrl: this.cmsUrl,
+      testing: this.testing
     };
 
       //Copy the configuration files
