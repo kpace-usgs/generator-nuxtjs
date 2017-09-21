@@ -29,14 +29,18 @@ cd nuxt-app
 yo nuxtjs
 ```
 ## Learn more about Vue
-[Vue.js docs](https://vuejs.org)
-[Intro for people who know jQuery](https://medium.freecodecamp.org/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77)
+[Vue.js docs](https://vuejs.org)  
+
+[Intro for people who know jQuery](https://medium.freecodecamp.org/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77)  
 
 ## Learn more about Nuxt
-[Hello World](https://nuxtjs.org/examples)
-[Pre-rendering vs server-side rendering](https://vuejsdevelopers.com/2017/04/01/vue-js-prerendering-node-laravel/)
-[SEO info in nuxt pages](https://medium.com/@devlob/handling-server-side-rendering-and-seo-with-nuxt-js-fa8a2b0ae2ee)
-[Add CMS to Nuxt.js](https://snipcart.com/blog/cockpit-cms-tutorial-nuxtjs)
+[Hello World](https://nuxtjs.org/examples)  
+
+[Pre-rendering vs server-side rendering](https://vuejsdevelopers.com/2017/04/01/vue-js-prerendering-node-laravel/)  
+
+[SEO info in nuxt pages](https://medium.com/@devlob/handling-server-side-rendering-and-seo-with-nuxt-js-fa8a2b0ae2ee)  
+
+[Add CMS to Nuxt.js](https://snipcart.com/blog/cockpit-cms-tutorial-nuxtjs)  
 
 ## Getting To Know Yeoman
 [Learn more about Yeoman.](http://yeoman.io/)
