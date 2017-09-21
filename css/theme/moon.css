@@ -3,7 +3,7 @@
  * Author: Achim Staebler
  */
 @import url(../../lib/font/league-gothic/league-gothic.css);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400");
 /**
  * Solarized colors by Ethan Schoonover
  */
@@ -15,14 +15,14 @@ html * {
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #002b36;
-  background-color: #002b36; }
+  background: linear-gradient(to top, #d66d75, #e29587);
+  background-color: linear-gradient(to top, #d66d75, #e29587); }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: #93a1a1; }
+  color: #fdf6e3; }
 
 ::selection {
   color: #fff;
@@ -214,20 +214,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #268bd2;
-  text-decoration: none;
+  color: #eee8d5;
+  text-decoration: 1px dashed #eee8d5;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #78b9e6;
+  color: white;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #1a6091; }
+  background: #d8ca9f; }
 
 /*********************************************
  * IMAGES
@@ -235,7 +235,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #93a1a1;
+  border: 4px solid #fdf6e3;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
@@ -249,7 +249,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #268bd2;
+  border-color: #eee8d5;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -257,31 +257,31 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #268bd2; }
+  border-right-color: #eee8d5; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #268bd2; }
+  border-left-color: #eee8d5; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #268bd2; }
+  border-bottom-color: #eee8d5; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #268bd2; }
+  border-top-color: #eee8d5; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #78b9e6; }
+  border-right-color: white; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #78b9e6; }
+  border-left-color: white; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #78b9e6; }
+  border-bottom-color: white; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #78b9e6; }
+  border-top-color: white; }
 
 /*********************************************
  * PROGRESS BAR
@@ -290,7 +290,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #268bd2;
+  background: #eee8d5;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }

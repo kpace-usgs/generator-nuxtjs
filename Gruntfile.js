@@ -19,9 +19,9 @@ module.exports = function(grunt) {
 				' */'
 		},
 
-		qunit: {
-			files: [ 'test/*.html' ]
-		},
+		// qunit: {
+		// 	files: [ 'test/*.html' ]
+		// },
 
 		uglify: {
 			options: {
@@ -66,31 +66,31 @@ module.exports = function(grunt) {
 			}
 		},
 
-		jshint: {
-			options: {
-				curly: false,
-				eqeqeq: true,
-				immed: true,
-				esnext: true,
-				latedef: true,
-				newcap: true,
-				noarg: true,
-				sub: true,
-				undef: true,
-				eqnull: true,
-				browser: true,
-				expr: true,
-				globals: {
-					head: false,
-					module: false,
-					console: false,
-					unescape: false,
-					define: false,
-					exports: false
-				}
-			},
-			files: [ 'Gruntfile.js', 'js/reveal.js' ]
-		},
+		// jshint: {
+		// 	options: {
+		// 		curly: false,
+		// 		eqeqeq: true,
+		// 		immed: true,
+		// 		esnext: true,
+		// 		latedef: true,
+		// 		newcap: true,
+		// 		noarg: true,
+		// 		sub: true,
+		// 		undef: true,
+		// 		eqnull: true,
+		// 		browser: true,
+		// 		expr: true,
+		// 		globals: {
+		// 			head: false,
+		// 			module: false,
+		// 			console: false,
+		// 			unescape: false,
+		// 			define: false,
+		// 			exports: false
+		// 		}
+		// 	},
+		// 	files: [ 'Gruntfile.js', 'js/reveal.js' ]
+		// },
 
 		connect: {
 			server: {
@@ -154,8 +154,8 @@ module.exports = function(grunt) {
 	});
 
 	// Dependencies
-	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
-	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	//grunt.loadNpmTasks( 'grunt-contrib-qunit' );
+	//grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
@@ -169,7 +169,8 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
 
 	// JS task
-	grunt.registerTask( 'js', [ 'jshint', 'uglify', 'qunit' ] );
+	//grunt.registerTask( 'js', [ 'jshint', 'uglify', 'qunit' ] );
+	grunt.registerTask( 'js', [ 'uglify' ]);
 
 	// Theme CSS
 	grunt.registerTask( 'css-themes', [ 'sass:themes' ] );
@@ -187,6 +188,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'serve', [ 'connect', 'watch' ] );
 
 	// Run tests
-	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
+	//grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
+
 
 };

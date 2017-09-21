@@ -209,7 +209,7 @@ body {
  *********************************************/
 .reveal a {
   color: #e7ad52;
-  text-decoration: none;
+  text-decoration: 1px dashed #e7ad52;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }

@@ -19,7 +19,7 @@ body {
   background-color: #fdf6e3; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   font-weight: normal;
   color: #657b83; }
@@ -215,7 +215,7 @@ body {
  *********************************************/
 .reveal a {
   color: #268bd2;
-  text-decoration: none;
+  text-decoration: 1px dashed #268bd2;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
