@@ -1,5 +1,5 @@
 # generator-nuxtjs  [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> generate a nuxtjs project that prerenders a multi-page site built using vue.js framework
+> generate a [nuxtjs](https://nuxtjs.org) project that prerenders a multi-page site built using vue.js framework
 
 ## Installation
 
@@ -28,6 +28,12 @@ mkdir nuxt-app
 cd nuxt-app
 yo nuxtjs
 ```
+
+## Learn more about Nuxt
+[Hello World](https://nuxtjs.org/examples)
+[Pre-rendering vs server-side rendering](https://vuejsdevelopers.com/2017/04/01/vue-js-prerendering-node-laravel/)
+[SEO info in nuxt pages](https://medium.com/@devlob/handling-server-side-rendering-and-seo-with-nuxt-js-fa8a2b0ae2ee)
+[Add CMS to Nuxt.js](https://snipcart.com/blog/cockpit-cms-tutorial-nuxtjs)
 
 ## Getting To Know Yeoman
 [Learn more about Yeoman.](http://yeoman.io/)
